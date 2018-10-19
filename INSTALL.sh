@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Copy the files into place
-cp -r etc/* /etc
-cp -r usr/* /usr
+install -b etc/* /etc
+install -b usr/* /usr
 
 # Set the capabilities of Bro
 setcap cap_net_raw,cap_net_admin=eip /usr/bin/bro
