@@ -1,11 +1,11 @@
 #!/bin/sh
 
 # Make a backup of the existing files
-mkdir /usr/src/bro-backup
-cp -r /usr/share/bro /usr/src/bro-backup
-cp -r /usr/share/broctl /usr/src/bro-backup
-cp -r /etc/bro /usr/src/bro-backup
-cp -r /etc/logstash /usr/src/bro-backup
+mkdir -p /usr/src/bro-backup/{etc,usr/share}
+cp -r /usr/share/bro /usr/src/bro-backup/usr/share
+cp -r /usr/share/broctl /usr/src/bro-backup/usr/share
+cp -r /etc/bro /usr/src/bro-backup/etc
+cp -r /etc/logstash /usr/src/bro-backup/etc
 
 # Copy the files into place and make a backup for good measure
 cp -b etc/* /etc
