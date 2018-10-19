@@ -100,3 +100,12 @@
 # Uncomment the following line to enable the SMB analyzer.  The analyzer
 # is currently considered a preview and therefore not loaded by default.
 # @load policy/protocols/smb
+
+# Security Onion default scripts
+@load securityonion
+
+# ShellShock - detects successful exploitation of Bash vulnerability CVE-2014-6271
+@load shellshock
+
+# Output logs in JSON format
+@load json-logs
