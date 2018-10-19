@@ -7,9 +7,9 @@ cp -r /usr/share/broctl /usr/src/bro-backup/usr/share
 cp -r /etc/bro /usr/src/bro-backup/etc
 cp -r /etc/logstash /usr/src/bro-backup/etc
 
-# Copy the files into place and make a backup for good measure
-cp -b etc/* /etc
-cp -b usr/* /usr
+# Copy the files into place
+cp -br etc/* /etc
+cp -br usr/* /usr
 
 # Set the capabilities of Bro
 setcap cap_net_raw,cap_net_admin=eip /usr/bin/bro
