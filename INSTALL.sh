@@ -1,8 +1,15 @@
 #!/bin/sh
 
-# Copy the files into place
-install -b etc/* /etc
-install -b usr/* /usr
+# Make a backup of the existing files
+mkdir /usr/src/bro-backup
+cp -r /usr/share/bro /usr/src/bro-backup
+cp -r /usr/share/broctl /usr/src/bro-backup
+cp -r /etc/bro /usr/src/bro-backup
+cp -r /etc/logstash /usr/src/bro-backup
+
+# Copy the files into place and make a backup for good measure
+cp -b etc/* /etc
+cp -b usr/* /usr
 
 # Set the capabilities of Bro
 setcap cap_net_raw,cap_net_admin=eip /usr/bin/bro
